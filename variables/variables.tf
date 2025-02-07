@@ -38,8 +38,16 @@ variable "cidr_blocks" {
 }
 
 variable "sg_tags" {
-  type = map(any)
+  type = map(string)
   default = {
     Name = "expense-backend-dev"
   }
 }
+
+
+/* 
+1. command line --> -var "<var-name>=<var-value>"
+2. tfvars --> How do you override default variable values in terraform? terraform.tfvars --> You can override default values in terraform
+3. env var --> TF_VAR_<var-name> (export TF_VAR_Instance_type="t2.large") (unset TF_VAR_Instance_type)
+4. default values
+5. user prompt */
